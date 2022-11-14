@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#div1 {
+    width: 100%;
+    /* height: 120vh; */
+    background-image: url("/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#div1box {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+
+#tournamentform {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(51, 49, 49);
+    border-radius: 8px;
+    margin-top: 20px;
+    color: white;
+    /* padding: 30px; */
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.innerform {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tournamentform span {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px dashed white;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.tournamentformgroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.tournamentformgroup input {
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 6px;
+    width: 95%;
+    border: none;
+    outline: none;
+}
+
+.tournamentformgroup select {
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+#tournamentform button {
+    background-color: rgb(221, 182, 8);
+    color: white;
+    border-radius: 6px;
+    padding: 16px;
+    border: none;
+    margin: 10px 0;
+}
+
+@media (max-width:610px) {
+    #div1box {
+        width: 100%;
+    }
+}

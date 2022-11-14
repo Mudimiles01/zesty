@@ -1,0 +1,216 @@
+body {
+    background-color: #26394d;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+#profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#profileinner {
+    width: 80%;
+    padding: 20px;
+    background-color: #2a3a4b;
+    -webkit-box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#adminprofile {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#adminprofile span:nth-of-type(1) {
+    border-bottom: 4px solid rgb(7, 121, 51);
+    margin-bottom: 5px;
+}
+
+#updatebox {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#updatebox button {
+    margin: 5px ;
+}
+
+.profileboxbtn {
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    background-color: transparent !important;
+    border: 1px solid rgb(255, 255, 255) !important;
+    color: white;
+    
+    transition: 0.4s !important;
+    margin: 10px 0;
+}
+
+.profileboxicon {
+    color: white;
+    margin: 0 5px;
+}
+
+.profileboxbtn:hover {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(8, 105, 202) !important;
+}
+
+.profileboxbtn:hover .profileboxicon {
+    color: rgb(8, 105, 202) !important;
+}
+
+.updateform {
+    display: flex;
+    flex-direction: column;
+}
+
+.updateformdiv {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.updateformdiv label {
+    font-size: 0.7em;
+}
+
+.forminput {
+    padding: 6px 0;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+}
+
+#wallet {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+#walletbox {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: #2a3a4b;
+    color: white;
+    -webkit-box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%), 0 11px 6px -7px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    font-family: 'Oswald', sans-serif;
+    padding: 30px 20px;
+}
+
+#wallet p {
+    color: white;
+}
+
+#tablecontainer {
+    width: 100%;
+    overflow-x: auto;
+    
+}
+
+#historytable {
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
+    font-size:1em;
+}
+
+
+#historytable thead th {
+    position: sticky;
+    background-color: transparent;
+    top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+    padding: 10px 20px;
+    font-weight: lighter;
+    /* border-right: 1px solid black; */
+}
+
+#historytable td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.404);
+    padding: 10px 20px;
+}
+
+#tablecontainer::-webkit-scrollbar{
+    width: 10px;
+}
+
+#tablecontainer::-webkit-scrollbar-track {
+    -webkit-box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.459)
+}
+
+#tablecontainer::-webkit-scrollbar-thumb {
+    -webkit-box-shadow:inset 0 0 10px rgba(0, 0, 0, 0.534)
+}
+
+
+
+
+.uploadproofbtn {
+    background-color: rgb(211, 21, 21);
+    color: white !important;
+    border: none;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    white-space: nowrap;   
+}
+
+.uploadproofbtn:hover {
+    background-color: rgb(141, 10, 10);
+}
+
+#logoutform button {
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    transition: 0.5;
+    border: none;
+}
+
+#logoutform button:hover {
+    background-color: rgb(184, 0, 0);
+    cursor: pointer;
+}
+
+
+@media (max-width:290px) {
+    #profileinner, #navbox {
+        width: 96%;
+    }
+}

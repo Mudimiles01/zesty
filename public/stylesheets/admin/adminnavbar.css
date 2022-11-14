@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* #header {
+    background-color: rgb(77, 77, 180);
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+} */
+
+#logodiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+#logodiv h2 {
+    color: white;
+    font-family: 'Comforter', cursive;
+    
+}
+
+#logo {
+    width: 200px;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.nav-link {
+    width: max-content;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition:  0.5s;
+    margin: 0 5px ;
+}
+
+.nav-link:hover {
+    color:yellow !important;
+}
+
+.nav-link.active {
+    color: white;
+
+}
+
+#logoutform button {
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    transition: 0.5;
+    border: none;
+}
+
+#logoutform button:hover {
+    background-color: rgb(184, 0, 0);
+    cursor: pointer;
+}
+
+
+
+@media (max-width:990px) {
+    #navbar {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    #logodiv {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .navbar-toggler {
+        display: block;
+        margin-right: 10px;
+        
+    }
+    .navbar {
+        width: 100%;
+        text-align: center;
+    }
+    .container-fluid, .navbar-collapse, .navbar-nav {
+        width: 100%;
+    }
+    .navbar a {
+        width: 100%;
+    }
+    #logoutform button {
+        width: 100%;
+        border-radius: 4px;
+    }
+    .nav-link:hover {
+        color:yellow !important;
+        background-color: rgba(128, 128, 128, 0.555);
+    }
+}
+
+@media (max-width:340px) { 
+  .navbar-toggler {
+      margin-top: 20px;
+  }
+  #logo {
+      width: 94%;
+  }
+}

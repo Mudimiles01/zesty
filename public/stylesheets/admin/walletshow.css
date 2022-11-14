@@ -1,0 +1,68 @@
+body {
+    background-color: #26394d;
+    margin: 0;
+    padding: 0;
+}
+
+#div1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#wallet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bakbak One', cursive;
+    background-color: white;
+    padding: 30px;
+}
+
+#walletinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#walletinfo input {
+    margin: 5px 0;
+    width: 80%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+#walletinfo textarea {
+    resize: none;
+}
+
+#walletinfo label {
+    margin-top: 5px;
+}
+
+.delete {
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    background-color: red;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background-color: rgb(170, 11, 11);
+}
+
+@media (max-width:350px) {
+    #wallet {
+        width: 96%;
+    }
+    #walletinfo textarea {
+        width: 100%;
+    }
+}
