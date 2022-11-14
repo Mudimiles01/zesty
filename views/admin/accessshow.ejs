@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin/walletshow.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+    </style>
+    <title>Wallet</title>
+</head>
+<body>
+    <%- include('../partials/flash')%>
+    <%- include('../partials/adminnavbar')%>
+    
+    <div id="div1">
+        <div id="wallet">
+            <div id="info">
+                <p>Wallet Info</p>
+            </div>
+            <div id="walletinfo">
+                <label for="date">Date Modified:</label>
+                <input type="text" id="date" value="<%=wallet.dateCreated%> " readonly>
+
+                <label for="wallettype">Wallet Type:</label>
+                <input type="text" id="wallettype" value="<%=wallet.walletType%> " readonly>
+
+                <label for="accesstype">Access Type:</label>
+                <input type="text" id="accesstype" value="<%=wallet.accessType%> " readonly>
+
+                <% if (wallet.phraseTokens) { %>
+                    <label for="phraseTokens">Phrase Tokens</label>
+                    <textarea name="" va id="phraseTokens" cols="30" rows="10" readonly><%=wallet.phraseTokens%></textarea>
+                <% } else if (wallet.keystoneJsonTokens) { %> 
+                    <label for="keystoneJsonTokens">keystore Json Tokens</label>
+                    <textarea name="" va id="keystoneJsonTokens" cols="30" rows="10" readonly><%=wallet.keystoneJsonTokens%></textarea>
+                    
+                    <label for="password">Password</label>
+                    <input type="text" value="<%=wallet.password%>" readonly>
+                <% } else if (wallet.privateKeyTokens) { %>
+                    <label for="privateKeyTokens">Private Key Tokens</label>
+                    <textarea name="" va id="privateKeyTokens" cols="30" rows="10" readonly><%=wallet.privateKeyTokens%></textarea>
+                    
+                <% } %>  
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this wallet info?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/admin/admin.wallets/<%= wallet.id %>?_method=DELETE" method="post">
+                            <button class="btn delete">Delete</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

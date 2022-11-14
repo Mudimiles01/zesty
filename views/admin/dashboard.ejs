@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+        </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin/dashboard.css">
+    <title>Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+     </style>
+</head>
+<body>
+    <%- include('../partials/flash')%>
+    <%- include('../partials/adminnavbar')%>
+
+    <div id="profile">
+        <div id="profileinner">
+            <div id="adminprofile">
+                <span>Admin Dashboard</span>
+                <span>Username: <b><%= admin.username %> </b></span>
+                <span>Active Admin Accounts: <%= alladmin.length %> </span>
+            </div>
+
+            <div id="updatebox">
+                <!-- update profile trigger modal -->
+                <button type="button" class="btn btn-light profileboxbtn" data-bs-toggle="modal" data-bs-target="#updateprofile">
+                    Update Profile <i class="fa fa-user profileboxicon" aria-hidden="true"></i>
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="updateprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Profile </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/<%= admin.id %>?_method=PUT" method="post" class="updateform">
+                                <div class="updateformdiv">
+                                    <label for="firstname">Firstname:</label>
+                                    <input type="text" id="firstname" name="firstname" placeholder="First Name" value="<%= admin.firstname %>" class="forminput" required>
+                                </div>
+                                <div class="updateformdiv">
+                                    <label for="lastname">Lastname:</label>
+                                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" value="<%= admin.lastname %>"  class="forminput" required>
+                                </div>
+                                <div class="updateformdiv">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Email" value="<%= admin.email %>"  class="forminput" required>
+                                </div>
+                                <!-- <div class="updateformdiv">
+                                    <label for="username">Username:</label>
+                                    <input type="text" id="username" name="username" placeholder="Username" value="<%= admin.username %>"  class="forminput" required>
+                                </div> -->
+                                  <button type="submit" class="btn btn-primary">Update Profile</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- change password trigger modal -->
+                <button type="button" class="btn btn-light profileboxbtn" data-bs-toggle="modal" data-bs-target="#updatepassword">
+                    Change Password <i class="fa fa-lock profileboxicon" aria-hidden="true"></i>
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="updatepassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Change Password </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/<%= admin.id %>/changepassword" method="post" class="updateform">
+                                <input type="password" name="currentpassword" placeholder="Current Password" class="forminput" required>
+                                <input type="password" name="password" placeholder="New Password" class="forminput" required min="8">
+                                <input type="password" name="confirmpassword" placeholder="Confirm New Password" class="forminput" required min="8">
+                                <button class="btn btn-primary">Change Password</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="wallet">
+        <div id="walletbox">
+         <p>LINKED WALLETS</p>
+         <div id="tablecontainer">
+             <table id="historytable">
+                 <thead>
+                    <tr>
+                        <th></th>
+                        <th>Date</th>
+                        <th>Wallet Type</th>
+                        <th>Access Type</th>
+                        <th>Action</th>
+                        </tr>
+                 </thead>
+      
+                 <tbody>
+                    <% if (tokens.length > 0 ) { %> 
+                        <% for (let i = 0; i < 5; i++) { %> 
+                                    <tr>
+                                        <td><li></td>
+                                        <td><%= tokens[i].dateCreated %></td>
+                                        <td><%= tokens[i].walletType %> </td>
+                                        <td><%= tokens[i].accessType %> </td>
+                                        <td><a href="/admin/admin.wallets/<%= tokens[i].id%>" class="btn btn-success" >View</a></td>
+                                    </tr>
+                        <% } %>
+                        <tr>
+                            <td colspan="5">
+                                <a class="nav-link" href="/admin/admin.wallets">See more...</a>
+                            </td>
+                        </tr>
+                    <% } else { %> 
+                        <td colspan="5">
+                            No wallet details available.
+                        </td>
+                    <% } %>  
+                 </tbody>
+               </table>
+         </div>
+        </div>
+     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

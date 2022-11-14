@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZetsyRangers || Join Tournament</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+        </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/jointournament.css" type="text/css">
+</head>
+<body>
+    <div id="div1">
+        <div id="div1box">
+            <img src="/img/logo.png" class="logo" alt="logo">
+            <form action="/join-tournament" method="post" id="tournamentform">
+                <div class="innerform">
+                    <h2>JOIN OUR FREE TOURNAMENT AND TRY TO WIN NFTS + OTHER AMAZING PRIZES!</h2>
+                <span>
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: orange;"></i> Our tournament is strictly limited to 20,000 people only. We do advise you to sign up now before it's too late. 
+                </span>
+                <div class="tournamentformgroup">
+                    <label for="profile">What's your profile? (Choose below)</label>
+                    <select name="profile" id="profile" required>
+                        <option value=""></option>
+                        <option value="I'm a pure gamer.">I'm a pure gamer.</option>
+                        <option value="I'm an NFT investor.">I'm an NFT investor.</option>
+                        <option value="I'm both.">I'm both.</option>
+                    </select>
+                </div>
+                <div class="tournamentformgroup">
+                    <label for="nftstatus">Do you own any NFTs? (Choose below)</label>
+                    <select name="nftstatus" id="nftstatus" required>
+                        <option value=""></option>
+                        <option value="No, I don't.">No, I don't.</option>
+                        <option value="Yes, I do.">Yes, I do.</option>
+                    </select>
+                </div>
+                <div class="tournamentformgroup">
+                    <label for="email">Enter your e-mail address:</label>
+                    <input type="email" placeholder="Enter your email address here." id="email" name="email" required>
+                </div>
+                <button> <i class="fa fa-arrow-circle-right" aria-hidden="true" style="color: black; margin-right: 10px;"></i> JOIN TOURNAMENT</button>
+                <small><i class="fa fa-lock" aria-hidden="true"></i> Your e-mail will only be used to register for the tournament and send important information about Arenamon. We will never spam or sell your data. You can unsubscribe easily at any time with 1 click.</small>
+            
+                </div>    
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
